@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  * {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-sans antialiased min-h-screen;
+    @apply bg-slate-50 text-slate-900;
+  }
+
+  .dark body {
+    @apply bg-gray-950 text-white;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-200;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    @apply bg-gray-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-b from-cyan-500 to-blue-500 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gradient-to-b from-cyan-400 to-blue-400;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply backdrop-blur-lg border rounded-2xl;
+    @apply bg-white/60 border-slate-200/80 shadow-sm;
+  }
+
+  .dark .glass-effect {
+    @apply bg-white/10 border-white/20 shadow-none;
+  }
+
+  .glass-card {
+    @apply backdrop-blur-md rounded-xl transition-all duration-300 border shadow-sm;
+    @apply bg-white/75 border-slate-200/90 hover:border-cyan-400/40 hover:shadow-md;
+  }
+
+  .dark .glass-card {
+    @apply bg-gray-800/50 border-gray-700 shadow-none hover:border-cyan-500/50;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-cyan-600 via-blue-600 to-violet-600 dark:from-cyan-400 dark:via-blue-500 dark:to-purple-600 bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-semibold text-white hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-[1.02] shadow-lg shadow-cyan-500/20;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 border;
+    @apply bg-slate-100/90 border-slate-200 text-slate-800 hover:bg-slate-200/90 hover:border-cyan-500/50;
+  }
+
+  .dark .btn-secondary {
+    @apply bg-gray-700/50 border-gray-600 text-white hover:bg-gray-700 hover:border-cyan-500;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold text-center mb-12 text-slate-900 dark:text-white;
+  }
+
+  .section-subtitle {
+    @apply text-xl text-slate-600 dark:text-gray-300 text-center mb-8;
+  }
+}
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
