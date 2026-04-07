@@ -12,9 +12,13 @@ const About = () => {
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
               <img
-                src={encodeURI(personalInfo.profileImage)}
+                src={personalInfo.profileImage}
                 alt={personalInfo.name}
                 className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 rounded-full object-cover border-4 border-cyan-500/40 dark:border-cyan-500/50 shadow-2xl shadow-slate-900/10 dark:shadow-none group-hover:scale-105 transition-transform duration-300"
+                onError={(e) => {
+                  console.error('Image failed to load:', personalInfo.profileImage);
+                  e.target.src = '/images/myprofile.png'; // Fallback
+                }}
               />
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
