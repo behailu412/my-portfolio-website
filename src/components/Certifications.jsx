@@ -9,13 +9,21 @@ const Certifications = () => {
   const handleDownload = (cert, index) => {
     setDownloading(index);
     
-    // Create a temporary anchor element to trigger download
-    const link = document.createElement('a');
-    link.href = cert.pdfPath;
-    link.download = `${cert.title.replace(/\s+/g, '_')}.pdf`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // Open the PDF in a new tab for viewing/downloading
+    // This works more reliably on Vercel than the download attribute
+    const newWindow = window.open(cert.pdfPath, '_blank');
+    
+    // If the new window is blocked, fallback to direct link
+    if (!newWindow) {
+      // Create a temporary anchor element as fallback
+      const link = document.createElement('a');
+      link.href = cert.pdfPath;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
     
     // Reset downloading state after 1 second
     setTimeout(() => {
