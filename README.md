@@ -268,7 +268,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Behailu Yifru**
 - Email: yifrubehailu412@gmail.com
 - GitHub: [@behailu412](https://github.com/behailu412)
-- LinkedIn: [Behailu Yifru](https://www.linkedin.com/in/behailu-yifru-43b4a03b1)
+- LinkedIn: [Behailu Yifru](https://www.linkedin.com/in/behailu-yifru-8b508042b?utm_source=share_via&utm_content=profile&utm_medium=member_android)
 - Telegram: [@haile_cs_1](https://t.me/haile_cs_1)
 
 ---

@@ -1,13 +1,13 @@
 // Personal Information
 export const personalInfo = {
   name: "Behailu Yifru",
-  title: "Computer Science Student & Web Developer",
-  bio: "I am a passionate third-year Computer Science student at Debre Berhan University, specializing in Web Development with additional experience in mobile and desktop applications. I love creating innovative solutions that solve real-world problems and contribute to the tech ecosystem in Ethiopia.",
+  title: "Computer Science Student & Full-Stack Web Developer",
+  bio: "I am a passionate fourth-year Computer Science student at Debre Berhan University, specializing in Web Development with additional experience in mobile and desktop applications. I love creating innovative solutions that solve real-world problems and contribute to the tech ecosystem in Ethiopia.",
   profileImage: "/images/myprofile.png",
   education: {
     university: "Debre Berhan University",
     degree: "Bachelor of Science in Computer Science",
-    year: "3rd Year",
+    year: "4th Year",
     expectedGraduation: "2027"
   }
 };
@@ -24,6 +24,7 @@ export const skills = {
   ],
   frameworksTools: [
     { name: "React", level: 88, icon: "⚛️" },
+    { name: "Next.js", level: 85, icon: "▲" },
     { name: "Node.js", level: 82, icon: "🟢" },
     { name: "Git", level: 85, icon: "📊" },
     { name: "Laravel", level: 78, icon: "🎯" },
@@ -138,7 +139,7 @@ export const certifications = [
 export const contactInfo = {
   email: "yifrubehailu412@gmail.com",
   github: "https://github.com/behailu412",
-  linkedin: "https://www.linkedin.com/in/behailu-yifru-43b4a03b1?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+  linkedin: "https://www.linkedin.com/in/behailu-yifru-8b508042b?utm_source=share_via&utm_content=profile&utm_medium=member_android",
   telegram: "https://t.me/haile_cs_1",
   location: "Debre Berhan, Ethiopia",
   resume: "https://drive.google.com/file/d/1yTh-iOD9x1Ce_dA-YBUvXGk1D3kC75fH/view?usp=sharing"
@@ -150,10 +151,59 @@ export const formspreeConfig = {
   email: 'yifrubehailu412@gmail.com'
 };
 
+// Quick Highlights / Stats
+export const quickStats = [
+  { label: "Academic Standing", value: "4th Year", subtext: "Debre Berhan University" },
+  { label: "Featured Projects", value: "5+", subtext: "Full-Stack, AI & Mobile" },
+  { label: "Certifications", value: "4", subtext: "Udacity Verified" },
+  { label: "Core Technologies", value: "10+", subtext: "Next.js, React, Python & More" }
+];
+
+// Interactive Role Taglines for Hero Typewriter
+export const heroTaglines = [
+  "4th-Year Computer Science Scholar",
+  "Full-Stack Web & Next.js Developer",
+  "Python & AI Agent Enthusiast",
+  "Building Impactful Digital Solutions"
+];
+
+// Academic & Technical Journey Timeline
+export const careerJourney = [
+  {
+    period: "2023 - Foundations",
+    title: "Programming & Android Core",
+    organization: "Debre Berhan University & Udacity",
+    description: "Built rock-solid foundations in Object-Oriented Programming, data structures, algorithms, and mobile development with Kotlin/Android.",
+    badge: "Foundation"
+  },
+  {
+    period: "2024 - AI & Data Specialization",
+    title: "AI Fundamentals & Data Analysis",
+    organization: "Udacity Nanodegrees",
+    description: "Earned dual Nanodegree certifications in AI fundamentals and Data Analysis. Developed custom machine learning workflows and Python intelligent systems.",
+    badge: "Nanodegree"
+  },
+  {
+    period: "2025 - Full-Stack Architecture",
+    title: "Modern Web & Distributed Apps",
+    organization: "Debre Berhan University",
+    description: "Engineered Ethiopian Skill Match platform, BY TeleTok real-time communication, and cross-platform desktop/mobile utilities.",
+    badge: "Engineering"
+  },
+  {
+    period: "2026 - Present (4th Year)",
+    title: "Advanced Next.js & Senior Capstone",
+    organization: "Graduating Senior · Debre Berhan University",
+    description: "Specializing in high-performance Next.js architectures, modern full-stack web applications, and contributing to the technological ecosystem in Ethiopia.",
+    badge: "Current"
+  }
+];
+
 // Navigation Links
 export const navLinks = [
   { name: "Home", href: "#home", id: "home" },
   { name: "Skills", href: "#skills", id: "skills" },
+  { name: "Journey", href: "#journey", id: "journey" },
   { name: "Projects", href: "#projects", id: "projects" },
   { name: "Certifications", href: "#certifications", id: "certifications" },
   { name: "Contact", href: "#contact", id: "contact" }
@@ -169,11 +219,10 @@ export const socialLinks = [
   },
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/behailu-yifru-43b4a03b1",
+    url: "https://www.linkedin.com/in/behailu-yifru-8b508042b?utm_source=share_via&utm_content=profile&utm_medium=member_android",
     icon: "FaLinkedin",
     color: "#0077b5"
   },
-  
   {
     name: "Email",
     url: "mailto:yifrubehailu412@gmail.com",

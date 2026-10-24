@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { contactInfo, personalInfo, socialLinks, formspreeConfig } from '../data/data';
-import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaCheckCircle, FaExclamationCircle, FaSpinner } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaCheckCircle, FaExclamationCircle, FaSpinner, FaCopy, FaCheck } from 'react-icons/fa';
 
 const ICONS = {
   FaGithub: FaGithub,
@@ -10,6 +10,7 @@ const ICONS = {
 };
 
 const Contact = () => {
+  const [copiedEmail, setCopiedEmail] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -153,16 +154,30 @@ const Contact = () => {
               <h3 className="text-xl lg:text-2xl font-bold text-slate-900 dark:text-white mb-4 lg:mb-6">Contact Information</h3>
               
               <div className="space-y-4">
-                <div className="flex items-center space-x-3 sm:space-x-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center shadow-md shadow-cyan-500/20">
-                    <FaEnvelope className="text-white text-lg sm:text-xl" />
+                <div className="flex items-center justify-between p-3 rounded-xl bg-slate-50 dark:bg-gray-800/60 border border-slate-200/80 dark:border-gray-700/80">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center shadow-md shadow-cyan-500/20 text-white">
+                      <FaEnvelope className="text-lg" />
+                    </div>
+                    <div>
+                      <p className="text-slate-500 dark:text-gray-400 text-xs font-medium">Direct Email</p>
+                      <a href={`mailto:${contactInfo.email}`} className="text-slate-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors font-semibold text-xs sm:text-sm">
+                        {contactInfo.email}
+                      </a>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-slate-500 dark:text-gray-400 text-sm">Email</p>
-                    <a href={`mailto:${contactInfo.email}`} className="text-slate-900 dark:text-white hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors font-medium">
-                      {contactInfo.email}
-                    </a>
-                  </div>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      navigator.clipboard.writeText(contactInfo.email);
+                      setCopiedEmail(true);
+                      setTimeout(() => setCopiedEmail(false), 2000);
+                    }}
+                    className="p-2 rounded-lg text-slate-500 hover:text-cyan-500 hover:bg-slate-200 dark:hover:bg-gray-700 transition-colors"
+                    title="Copy email address"
+                  >
+                    {copiedEmail ? <FaCheck className="text-emerald-500 text-xs" /> : <FaCopy className="text-xs" />}
+                  </button>
                 </div>
 
                 <div className="flex items-center space-x-4">
