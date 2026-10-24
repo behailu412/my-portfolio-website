@@ -79,7 +79,7 @@ const Projects = () => {
                   Full-Lifecycle Engineering: Production & Private Systems
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-gray-300 leading-relaxed max-w-3xl">
-                  In addition to open-source GitHub repositories, my portfolio includes deployed production web platforms (Vercel), native Android mobile apps distributed on Telegram (<span className="text-cyan-600 dark:text-cyan-400 font-semibold">t.me/byteck21</span>), and commercial client solutions.
+                  In addition to open-source GitHub repositories, my portfolio includes deployed production web platforms (Vercel), native Android mobile apps distributed on Telegram (<span className="text-cyan-600 dark:text-cyan-400 font-semibold">t.me/bytech21</span>), and commercial client solutions.
                 </p>
               </div>
             </div>

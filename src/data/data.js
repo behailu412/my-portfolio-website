@@ -47,7 +47,7 @@ export const projects = [
     technologies: ["Next.js", "React", "Java", "Android XML", "Tailwind CSS", "Vercel"],
     githubLink: null,
     liveDemo: "https://by-poems.vercel.app/",
-    telegramApp: "https://t.me/byteck21",
+    telegramApp: "https://t.me/bytech21",
     searchKeywords: "የግጥም መድረክ by-poems poetry amharic social platform vercel",
     category: "web",
     badge: "Production · Web & Android App",
@@ -56,7 +56,7 @@ export const projects = [
       "Live web application built with Next.js & responsive Tailwind CSS",
       "Native Android mobile app developed with Java & XML",
       "Searchable on Google/Bing by 'የግጥም መድረክ'",
-      "Distributed on Telegram channel: t.me/byteck21"
+      "Distributed on Telegram channel: t.me/bytech21"
     ]
   },
   {
@@ -104,7 +104,7 @@ export const projects = [
     image: "/images/video_downloader_preview.jpg",
     technologies: ["Java", "Android XML", "Android SDK", "Multi-Threading"],
     githubLink: null,
-    telegramApp: "https://t.me/byteck21",
+    telegramApp: "https://t.me/bytech21",
     searchKeywords: "video downloader mobile android java xml youtube tiktok mp3 1080p",
     category: "mobile",
     badge: "Native Android App",
@@ -113,7 +113,7 @@ export const projects = [
       "Direct high-speed downloads from YouTube and TikTok",
       "Multiple format resolutions: 1080p, 720p, 480p, and MP3 audio extraction",
       "Built natively using Java and Android XML architecture",
-      "Available for download on Telegram: t.me/byteck21"
+      "Available for download on Telegram: t.me/bytech21"
     ]
   },
   {
