@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="primaryGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="50%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="30" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bg)"/>
+
+  <!-- Glowing Orbs in background -->
+  <circle cx="200" cy="150" r="180" fill="#06b6d4" opacity="0.15" filter="url(#glow)"/>
+  <circle cx="1000" cy="500" r="220" fill="#8b5cf6" opacity="0.15" filter="url(#glow)"/>
+
+  <!-- Grid overlay -->
+  <g stroke="rgba(255,255,255,0.03)" stroke-width="1">
+    <line x1="0" y1="135" x2="1200" y2="135"/>
+    <line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="0" y1="405" x2="1200" y2="405"/>
+    <line x1="0" y1="540" x2="1200" y2="540"/>
+    <line x1="240" y1="0" x2="240" y2="675"/>
+    <line x1="480" y1="0" x2="480" y2="675"/>
+    <line x1="720" y1="0" x2="720" y2="675"/>
+    <line x1="960" y1="0" x2="960" y2="675"/>
+  </g>
+
+  <!-- Navbar Mockup -->
+  <rect x="80" y="50" width="1040" height="60" rx="16" fill="#1e293b" fill-opacity="0.6" stroke="#334155" stroke-width="1"/>
+  <text x="110" y="87" fill="#38bdf8" font-family="system-ui, sans-serif" font-weight="800" font-size="22">BY-TECH</text>
+  <text x="210" y="86" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="14">Laptops</text>
+  <text x="290" y="86" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="14">Smartphones</text>
+  <text x="410" y="86" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="14">Accessories</text>
+  <rect x="940" y="65" width="150" height="32" rx="8" fill="url(#primaryGlow)"/>
+  <text x="975" y="86" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="700" font-size="13">Cart (3 Items)</text>
+
+  <!-- Hero Section of Ecommerce -->
+  <rect x="80" y="130" width="1040" height="240" rx="20" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5"/>
+  
+  <text x="120" y="190" fill="#38bdf8" font-family="system-ui, sans-serif" font-weight="700" font-size="14" letter-spacing="2">PREMIUM TECH E-COMMERCE PLATFORM</text>
+  <text x="120" y="240" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="800" font-size="34">Next-Gen Electronics Store</text>
+  <text x="120" y="275" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="16">Full-featured catalog, real-time inventory, device spec comparison, and smooth checkout</text>
+
+  <!-- Live Platform Badge -->
+  <rect x="120" y="305" width="140" height="38" rx="10" fill="#06b6d4" fill-opacity="0.2" stroke="#06b6d4" stroke-width="1.5"/>
+  <circle cx="140" cy="324" r="5" fill="#10b981"/>
+  <text x="155" y="329" fill="#38bdf8" font-family="system-ui, sans-serif" font-weight="700" font-size="13">LIVE DEMO</text>
+
+  <rect x="275" y="305" width="160" height="38" rx="10" fill="#334155" fill-opacity="0.8" stroke="#475569" stroke-width="1"/>
+  <text x="295" y="329" fill="#e2e8f0" font-family="system-ui, sans-serif" font-weight="600" font-size="13">Next.js &amp; Tailwind</text>
+
+  <!-- Tech product cards -->
+  <g transform="translate(80, 395)">
+    <!-- Card 1: High End Laptop -->
+    <rect x="0" y="0" width="320" height="230" rx="16" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5"/>
+    <rect x="20" y="20" width="280" height="110" rx="10" fill="#0b1329"/>
+    <!-- Laptop Icon / Visual -->
+    <rect x="70" y="35" width="180" height="70" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+    <rect x="50" y="105" width="220" height="8" rx="3" fill="#475569"/>
+    <text x="20" y="155" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="700" font-size="16">Pro Creator Laptop 16"</text>
+    <text x="20" y="178" fill="#64748b" font-family="system-ui, sans-serif" font-size="12">Core i9 · 32GB RAM · 1TB SSD</text>
+    <text x="20" y="208" fill="#38bdf8" font-family="system-ui, sans-serif" font-weight="800" font-size="18">$1,499.00</text>
+    <rect x="210" y="188" width="90" height="28" rx="6" fill="#0284c7"/>
+    <text x="232" y="206" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="600" font-size="11">Order</text>
+
+    <!-- Card 2: Smartphone -->
+    <rect x="360" y="0" width="320" height="230" rx="16" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5"/>
+    <rect x="380" y="20" width="280" height="110" rx="10" fill="#0b1329"/>
+    <!-- Phone visual -->
+    <rect x="490" y="28" width="60" height="95" rx="8" fill="#1e293b" stroke="#818cf8" stroke-width="2"/>
+    <circle cx="520" cy="35" r="3" fill="#818cf8"/>
+    <text x="380" y="155" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="700" font-size="16">Ultra 5G Flagship Phone</text>
+    <text x="380" y="178" fill="#64748b" font-family="system-ui, sans-serif" font-size="12">AMOLED 120Hz · 256GB Storage</text>
+    <text x="380" y="208" fill="#38bdf8" font-family="system-ui, sans-serif" font-weight="800" font-size="18">$899.00</text>
+    <rect x="570" y="188" width="90" height="28" rx="6" fill="#0284c7"/>
+    <text x="592" y="206" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="600" font-size="11">Order</text>
+
+    <!-- Card 3: Smart Accessories -->
+    <rect x="720" y="0" width="320" height="230" rx="16" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5"/>
+    <rect x="740" y="20" width="280" height="110" rx="10" fill="#0b1329"/>
+    <!-- Accessories visual -->
+    <circle cx="880" cy="75" r="30" fill="none" stroke="#a855f7" stroke-width="3"/>
+    <circle cx="865" cy="75" r="10" fill="#a855f7" opacity="0.6"/>
+    <circle cx="895" cy="75" r="10" fill="#a855f7" opacity="0.6"/>
+    <text x="740" y="155" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="700" font-size="16">Wireless ANC Headphones</text>
+    <text x="740" y="178" fill="#64748b" font-family="system-ui, sans-serif" font-size="12">Hi-Res Audio · 40h Battery</text>
+    <text x="740" y="208" fill="#38bdf8" font-family="system-ui, sans-serif" font-weight="800" font-size="18">$199.00</text>
+    <rect x="930" y="188" width="90" height="28" rx="6" fill="#0284c7"/>
+    <text x="952" y="206" fill="#ffffff" font-family="system-ui, sans-serif" font-weight="600" font-size="11">Order</text>
+  </g>
+</svg>

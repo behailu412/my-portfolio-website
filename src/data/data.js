@@ -37,57 +37,144 @@ export const skills = {
   ]
 };
 
-// Projects Data
+// Projects Data - Curated selection of Production, Commercial, and Open-Source Systems
 export const projects = [
   {
     id: 1,
-    title: "Ethiopian Skill Match Web Application",
-    description: "A comprehensive platform designed to connect skilled individuals with local employment opportunities and freelance projects. Features include user profiles, job matching algorithms, and real-time notifications.",
-    image: "/images/Ethiopian Skill Match Web Application.png",
-    technologies: ["HTML","JavaScript", "Java", "MySQL", "Tailwind CSS"],
-    githubLink: "https://github.com/behailu412/Ethiopian-Skill-Match-Web-Application",
-    liveDemo: null,
-    category: "web"
+    title: "By-poems ('የግጥም መድረክ') Platform",
+    description: "A modern full-stack social poetry platform with dual web and native Android clients. Features poetry feeds, author profiles, verse curation, community interactions, and authentic Amharic typography. Live on Vercel and distributed as a native Android app via Telegram.",
+    image: "/images/by_poems_preview.jpg",
+    technologies: ["Next.js", "React", "Java", "Android XML", "Tailwind CSS", "Vercel"],
+    githubLink: null,
+    liveDemo: "https://by-poems.vercel.app/",
+    telegramApp: "https://t.me/byteck21",
+    searchKeywords: "የግጥም መድረክ by-poems poetry amharic social platform vercel",
+    category: "web",
+    badge: "Production · Web & Android App",
+    isPrivate: true,
+    highlights: [
+      "Live web application built with Next.js & responsive Tailwind CSS",
+      "Native Android mobile app developed with Java & XML",
+      "Searchable on Google/Bing by 'የግጥም መድረክ'",
+      "Distributed on Telegram channel: t.me/byteck21"
+    ]
   },
   {
     id: 2,
+    title: "BY-Tech Full-Stack Electronics E-Commerce",
+    description: "A comprehensive, high-performance web platform designed for tech retailers selling computers, laptops, smartphones, and electronics. Engineered beyond basic catalogs with dynamic spec filtering, real-time cart state, modern checkout flows, and responsive UI.",
+    image: "/images/by_tech_ecommerce.svg",
+    technologies: ["Next.js", "React", "Tailwind CSS", "Node.js", "Vercel"],
+    githubLink: null,
+    liveDemo: "https://by-tech.vercel.app/",
+    searchKeywords: "by-tech e-commerce electronics computers laptops smartphones store",
+    category: "web",
+    badge: "Production Web Platform",
+    isPrivate: true,
+    highlights: [
+      "Advanced product categorization and spec-based search",
+      "Dynamic interactive shopping cart and checkout architecture",
+      "Optimized for high-speed delivery with Next.js on Vercel",
+      "Mobile-first responsive design tailored for electronics commerce"
+    ]
+  },
+  {
+    id: 3,
+    title: "Smart Contactless QR Cafe & Restaurant System",
+    description: "An innovative digital contactless dining and menu management system designed for modern cafes and restaurants. Customers scan dynamic QR codes on dining tables to browse categorized digital menus, view daily specials, and place instant orders.",
+    image: "/images/qr_cafe_menu.jpg",
+    technologies: ["React", "JavaScript", "Tailwind CSS", "QR Tech", "Node.js"],
+    githubLink: null,
+    videoDemo: "https://vt.tiktok.com/ZSgHymDDy/",
+    searchKeywords: "smart qr cafe menu restaurant digital contactless food dining",
+    category: "web",
+    badge: "Commercial / Client Solution",
+    isPrivate: true,
+    highlights: [
+      "Contactless instant table ordering via QR code scanning",
+      "Dynamic visual categorization for coffees, pastries, and meals",
+      "Interactive video demonstration featured on TikTok",
+      "Eliminates paper menu reprint overhead for hospitality venues"
+    ]
+  },
+  {
+    id: 4,
+    title: "BY Mobile Video Downloader (Android)",
+    description: "A high-performance native Android application built with Java & XML that downloads videos from YouTube and TikTok in multiple qualities and formats (1080p, 720p, MP3 audio). Engineered with background thread queues and smooth local storage integration.",
+    image: "/images/video_downloader_preview.jpg",
+    technologies: ["Java", "Android XML", "Android SDK", "Multi-Threading"],
+    githubLink: null,
+    telegramApp: "https://t.me/byteck21",
+    searchKeywords: "video downloader mobile android java xml youtube tiktok mp3 1080p",
+    category: "mobile",
+    badge: "Native Android App",
+    isPrivate: true,
+    highlights: [
+      "Direct high-speed downloads from YouTube and TikTok",
+      "Multiple format resolutions: 1080p, 720p, 480p, and MP3 audio extraction",
+      "Built natively using Java and Android XML architecture",
+      "Available for download on Telegram: t.me/byteck21"
+    ]
+  },
+  {
+    id: 5,
+    title: "Ethiopian Skill Match Web Application",
+    description: "A comprehensive platform designed to connect skilled individuals with local employment opportunities and freelance projects. Features include user profiles, job matching algorithms, and real-time notifications.",
+    image: "/images/Ethiopian Skill Match Web Application.png",
+    technologies: ["HTML", "JavaScript", "Java", "MySQL", "Tailwind CSS"],
+    githubLink: "https://github.com/behailu412/Ethiopian-Skill-Match-Web-Application",
+    liveDemo: null,
+    category: "web",
+    badge: "Open Source Platform",
+    isPrivate: false
+  },
+  {
+    id: 6,
     title: "Ethiopian Food Advisor AI Agent",
     description: "An intelligent AI agent providing personalized dietary recommendations, recipe suggestions, and nutritional information focused specifically on authentic Ethiopian cuisine and traditional cooking methods.",
     image: "/images/Ethiopian Food Advisor AI Agent.png",
     technologies: ["Python", "AI/ML", "Flask", "BeautifulSoup"],
     githubLink: "https://github.com/behailu412/Ethiopian_food_advisor_AI_Agent",
     liveDemo: null,
-    category: "ai"
+    category: "ai",
+    badge: "AI & Machine Learning",
+    isPrivate: false
   },
   {
-    id: 3,
-    title: "BY YouTube Video Downloader",
+    id: 7,
+    title: "BY YouTube Video Downloader (Desktop)",
     description: "A powerful utility tool that allows users to download YouTube videos in various formats and qualities for offline viewing. Features batch downloading and format conversion capabilities.",
     image: "/images/BY YouTube_Video Downloader.png",
     technologies: ["Python", "PyTube", "FFmpeg", "Tkinter"],
     githubLink: "https://github.com/behailu412/BY-YouTube-Video-Downloader",
     liveDemo: null,
-    category: "tool"
+    category: "tool",
+    badge: "Desktop Utility",
+    isPrivate: false
   },
   {
-    id: 4,
+    id: 8,
     title: "BY TeleTok",
     description: "A creative social communication project that integrates messaging and content sharing features, providing users with a unique platform for digital interaction and media sharing.",
     image: "/images/BY TeleTok.png",
-    technologies: ["JavaScript", "Python","HTML", "css", "Socket.io", "MySQL"],
+    technologies: ["JavaScript", "Python", "Socket.io", "MySQL"],
     githubLink: "https://github.com/behailu412/BY_TeleTok",
     liveDemo: null,
-    category: "web"
+    category: "web",
+    badge: "Real-Time Web App",
+    isPrivate: false
   },
   {
-    id: 5,
+    id: 9,
     title: "Python Kivy Mobile App",
     description: "A cross-platform mobile application developed using the Kivy framework, demonstrating modern mobile development practices and responsive UI design for both Android and iOS platforms.",
     image: "/images/Python Kivy_Mobile App.jpg",
     technologies: ["Python", "Kivy", "SQLite", "Buildozer"],
     githubLink: "https://github.com/behailu412/python-kivy-mobile-app",
     liveDemo: null,
-    category: "mobile"
+    category: "mobile",
+    badge: "Cross-Platform Mobile",
+    isPrivate: false
   }
 ];
 
@@ -154,9 +241,9 @@ export const formspreeConfig = {
 // Quick Highlights / Stats
 export const quickStats = [
   { label: "Academic Standing", value: "4th Year", subtext: "Debre Berhan University" },
-  { label: "Featured Projects", value: "5+", subtext: "Full-Stack, AI & Mobile" },
+  { label: "Portfolio Projects", value: "10+", subtext: "Production, Mobile & Open-Source" },
   { label: "Certifications", value: "4", subtext: "Udacity Verified" },
-  { label: "Core Technologies", value: "10+", subtext: "Next.js, React, Python & More" }
+  { label: "Core Technologies", value: "12+", subtext: "Next.js, React, Java & Python" }
 ];
 
 // Interactive Role Taglines for Hero Typewriter
@@ -184,17 +271,17 @@ export const careerJourney = [
     badge: "Nanodegree"
   },
   {
-    period: "2025 - Full-Stack Architecture",
-    title: "Modern Web & Distributed Apps",
-    organization: "Debre Berhan University",
-    description: "Engineered Ethiopian Skill Match platform, BY TeleTok real-time communication, and cross-platform desktop/mobile utilities.",
+    period: "2025 - Full-Stack & Native Apps",
+    title: "Production Web & Native Android Engineering",
+    organization: "Independent & Client Developments",
+    description: "Architected By-poems platform (Next.js & Java Android), BY-Tech full-stack e-commerce store, Smart QR cafe menu systems, and high-performance video downloaders distributed via Telegram.",
     badge: "Engineering"
   },
   {
     period: "2026 - Present (4th Year)",
-    title: "Advanced Next.js & Senior Capstone",
+    title: "Senior Engineering & Scalable Platforms",
     organization: "Graduating Senior · Debre Berhan University",
-    description: "Specializing in high-performance Next.js architectures, modern full-stack web applications, and contributing to the technological ecosystem in Ethiopia.",
+    description: "Specializing in advanced Next.js web applications, scalable cloud deployments on Vercel, and delivering client-facing digital solutions across Ethiopia and beyond.",
     badge: "Current"
   }
 ];
