@@ -232,11 +232,14 @@ export const contactInfo = {
   resume: "https://drive.google.com/file/d/1yTh-iOD9x1Ce_dA-YBUvXGk1D3kC75fH/view?usp=sharing"
 };
 
-// Formspree configuration - works immediately on all devices
-export const formspreeConfig = {
-  endpoint: 'https://formspree.io/f/mnjowbjp', // Working endpoint for yifrubehailu412@gmail.com
-  email: 'yifrubehailu412@gmail.com'
+// Web3Forms configuration - reliable, standard direct email delivery
+export const web3FormsConfig = {
+  access_key: 'bc669e99-2b23-4bfa-94ef-aa6d38562054',
+  endpoint: 'https://api.web3forms.com/submit'
 };
+
+// Maintained for backward compatibility
+export const formspreeConfig = web3FormsConfig;
 
 // Quick Highlights / Stats
 export const quickStats = [

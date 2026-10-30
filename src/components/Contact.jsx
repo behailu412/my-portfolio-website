@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { contactInfo, personalInfo, socialLinks, formspreeConfig } from '../data/data';
+import { contactInfo, personalInfo, socialLinks, web3FormsConfig } from '../data/data';
 import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaPaperPlane, FaCheckCircle, FaExclamationCircle, FaSpinner, FaCopy, FaCheck } from 'react-icons/fa';
 
 const ICONS = {
@@ -82,35 +82,35 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      const formDataToSend = {
-        name: formData.name,
-        email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-        portfolio_name: personalInfo.name,
-        submitted_at: new Date().toLocaleString('en-US', {
-          year: 'numeric',
-          month: 'short',
-          day: '2-digit',
-          hour: '2-digit',
-          minute: '2-digit',
-          hour12: true,
-        })
-      };
+      const formDataToSend = new FormData();
+      formDataToSend.append('access_key', web3FormsConfig.access_key);
+      formDataToSend.append('name', formData.name.trim());
+      formDataToSend.append('email', formData.email.trim());
+      formDataToSend.append('subject', formData.subject.trim() || 'New Portfolio Contact Message');
+      formDataToSend.append('message', formData.message.trim());
+      formDataToSend.append('from_name', `${formData.name.trim()} (via Portfolio)`);
+      formDataToSend.append('reply_to', formData.email.trim());
+      // Anti-spam botcheck honeypot field
+      formDataToSend.append('botcheck', '');
 
-      // Use Formspree API
-      const response = await fetch(formspreeConfig.endpoint, {
+      // Send to Web3Forms API
+      const response = await fetch(web3FormsConfig.endpoint, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify(formDataToSend)
+        body: formDataToSend
       });
 
-      const result = await response.json();
+      const contentType = response.headers.get('content-type') || '';
+      let data = {};
+      if (contentType.includes('application/json')) {
+        data = await response.json();
+      } else {
+        throw new Error(response.ok ? 'Unexpected response format from server.' : 'Unable to connect to email service. Please try again.');
+      }
 
-      if (response.ok) {
+      if (response.ok && data.success) {
         setSubmitStatus('success');
         setFormData({
           name: '',
@@ -119,7 +119,7 @@ const Contact = () => {
           message: '',
         });
       } else {
-        throw new Error(result.error || 'Failed to send message');
+        throw new Error(data.message || 'Failed to send message via Web3Forms');
       }
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err);
@@ -234,7 +234,15 @@ const Contact = () => {
             >
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Send a Message</h3>
               
-              {/* No hidden fields needed for Formspree */}
+              {/* Web3Forms Anti-Spam Honeypot */}
+              <input
+                type="checkbox"
+                name="botcheck"
+                className="hidden"
+                style={{ display: 'none' }}
+                tabIndex={-1}
+                autoComplete="off"
+              />
               
               {submitStatus === 'success' && (
                 <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border border-green-200 dark:border-green-800 rounded-xl p-6 flex items-start space-x-4 shadow-lg shadow-green-500/10 animate-fadeIn">

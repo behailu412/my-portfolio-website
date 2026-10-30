@@ -17,13 +17,13 @@ A modern, responsive portfolio website showcasing the skills, projects, and cert
 - **Skills** - Interactive skill bars with proficiency levels
 - **Projects** - Project showcase with GitHub links and technology tags
 - **Certifications** - Udacity certificates with PDF download and verification links
-- **Contact** - Functional contact form with Formspree integration
+- **Contact** - Functional contact form with Web3Forms integration
 
 ### **Interactive Elements**
 - **Resume Viewer** - Direct PDF viewing in new tab without download prompts
 - **Certificate Downloads** - Reliable PDF downloading with fallback mechanisms
 - **Social Links** - Quick access to GitHub, LinkedIn, Telegram, and Email
-- **Contact Form** - Working email submission via Formspree
+- **Contact Form** - Working email submission via Web3Forms API
 - **Smooth Scrolling** - Seamless navigation between sections
 
 ## Technology Stack
@@ -35,7 +35,7 @@ A modern, responsive portfolio website showcasing the skills, projects, and cert
 - **React Icons** - Professional icon library
 
 ### **Backend Services**
-- **Formspree** - Contact form handling and email delivery
+- **Web3Forms** - Direct contact form handling and email delivery
 - **Vercel** - Deployment and hosting platform
 - **GitHub Pages** - Alternative deployment option
 
@@ -124,8 +124,8 @@ npm run preview
 Create a `.env.local` file in the root directory:
 
 ```env
-# Formspree Configuration (optional - already configured in data.js)
-VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/mnjowbjp
+# Web3Forms Access Key (configured in data.js)
+# VITE_WEB3FORMS_KEY=bc669e99-2b23-4bfa-94ef-aa6d38562054
 ```
 
 ### **Customization**
@@ -210,10 +210,10 @@ Add or modify projects and certifications in the respective arrays in `src/data/
 - **Fallback Mechanism** - Handles popup blockers and browser restrictions
 
 ### **Contact Form**
-- **Formspree Integration** - Reliable email delivery
+- **Web3Forms Integration** - Reliable, direct email delivery
 - **Client-side Validation** - Real-time form validation
 - **Success/Error States** - User feedback for form submission
-- **Spam Protection** - Built-in spam filtering
+- **Spam Protection** - Built-in honeypot botcheck filtering
 
 ### **Responsive Design**
 - **Mobile-First** - Designed for mobile devices first
@@ -257,7 +257,7 @@ Add or modify projects and certifications in the respective arrays in `src/data/
 - **HTTPS Only** - Enforced secure connections
 - **Content Security Policy** - Configured for security
 - **XSS Protection** - Built-in React protections
-- **Form Security** - Formspree handles form security
+- **Form Security** - Web3Forms handles spam protection and email delivery
 
 ## License
 
