@@ -6,9 +6,9 @@ const STORAGE_KEY = 'portfolio-theme';
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
-    if (typeof window === 'undefined') return 'night';
+    if (typeof window === 'undefined') return 'bright';
     const savedTheme = localStorage.getItem(STORAGE_KEY);
-    return savedTheme === 'bright' ? 'bright' : 'night';
+    return savedTheme === 'night' ? 'night' : 'bright';
   });
 
   useEffect(() => {
