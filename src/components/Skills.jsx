@@ -301,13 +301,19 @@ const Skills = () => {
             className="relative transition-transform duration-500 ease-out will-change-transform"
             style={{
               transformStyle: 'preserve-3d',
-              transform: `rotateY(${-6.5 + mouseOffset.x * 4}deg) rotateX(${5.5 - mouseOffset.y * 3}deg) rotateZ(0.5deg)`
+              transform: `rotateY(${-6.5 + mouseOffset.x * 4}deg) rotateZ(0.5deg)`
             }}
           >
             {/* ------------------------------------------------------ */}
-            {/* 1. LAPTOP SCREEN (LID) - PROPORTIONED REAL DISPLAY */}
+            {/* 1. LAPTOP SCREEN (LID) - FOLDED OPEN AT 100° */}
+            {/* Tilted back from vertical with origin at bottom hinge */}
             {/* ------------------------------------------------------ */}
-            <div className="relative rounded-t-xl sm:rounded-t-3xl bg-slate-950 p-1.5 sm:p-3.5 pb-2 border-2 sm:border-[3px] border-slate-700/80 dark:border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.5),-12px_20px_40px_rgba(0,0,0,0.35)]">
+            <div 
+              className="relative rounded-t-xl sm:rounded-t-3xl bg-slate-950 p-1.5 sm:p-3.5 pb-0 border-t-2 border-l-2 border-r-2 sm:border-t-[3px] sm:border-l-[3px] sm:border-r-[3px] border-slate-700/80 dark:border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.5),-12px_20px_40px_rgba(0,0,0,0.35)] transition-transform duration-500 will-change-transform origin-bottom"
+              style={{
+                transform: `rotateX(${-8 - mouseOffset.y * 2.5}deg)`
+              }}
+            >
             
             {/* Top Display Bezel: Centered Camera & Traffic Lights */}
             <div className="flex items-center justify-between px-2 sm:px-3 py-1 text-xs mb-1">
@@ -561,19 +567,28 @@ const Skills = () => {
               </div>
             </div>
 
-            {/* Bottom Inner Bezel with subtle branding */}
-            <div className="flex justify-center items-center py-1">
+            {/* Bottom Inner Bezel with Hinge Occlusion Shadow */}
+            <div className="relative flex justify-center items-center py-1.5 bg-slate-950 border-t border-slate-800/80">
               <span className="text-[9px] sm:text-[10px] font-mono text-slate-500 tracking-widest uppercase">
                 BY-WORKSTATION PRO
               </span>
+              {/* Deep Hinge Occlusion Shadow dropping onto the joint */}
+              <div className="absolute -bottom-1 inset-x-0 h-1.5 bg-gradient-to-b from-black/90 to-transparent pointer-events-none z-30" />
             </div>
           </div>
 
           {/* ------------------------------------------------------ */}
           {/* 2. PROPORTIONATE REALISTIC 3D LAPTOP KEYBOARD BASE */}
-          {/* Seamless flush hinge mounting directly under the screen */}
+          {/* Lying flat on desk and extending forward at ~100° to screen */}
           {/* ------------------------------------------------------ */}
-          <LaptopKeyboard />
+          <div 
+            className="w-full transition-transform duration-500 will-change-transform origin-top -mt-0.5"
+            style={{
+              transform: `rotateX(${14 - mouseOffset.y * 2}deg)`
+            }}
+          >
+            <LaptopKeyboard />
+          </div>
         </div>
 
         {/* Realistic Asymmetric 3D Cast Shadow onto Desk */}

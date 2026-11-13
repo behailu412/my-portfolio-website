@@ -1,10 +1,9 @@
 import React from 'react';
 
 /**
- * Photorealistic 3D Vector Laptop Base & Keyboard
- * Symmetrically aligned with exact edge-to-edge width matching the screen lid (0 to 1000).
- * Features 3D front chassis thickness, layered 3D chiclet keycaps, hardware side profiles,
- * and seamless flush hinge integration.
+ * Photorealistic 3D Vector Laptop Base & Keyboard with True 100° Hinge Connection
+ * Features an authentic cylindrical clutch hinge barrel, recessed ventilation trough,
+ * aluminum shoulder corners, 3D chiclet keys, and exact edge-to-edge alignment (0 to 1000).
  */
 const LaptopKeyboard = () => {
   // Key row specifications (width, label, special properties)
@@ -111,15 +110,15 @@ const LaptopKeyboard = () => {
 
       return (
         <g key={`key-${y}-${idx}`}>
-          {/* Key Base Drop Shadow */}
+          {/* Key Base Drop Shadow (3D depth from well) */}
           <rect
             x={x}
             y={y + 1.2}
             width={key.w}
             height={h}
             rx="2.5"
-            fill="#06080d"
-            opacity="0.9"
+            fill="#05070c"
+            opacity="0.95"
           />
 
           {/* Raised Keycap Face */}
@@ -171,9 +170,9 @@ const LaptopKeyboard = () => {
   };
 
   return (
-    <div className="relative w-full select-none -mt-0.5 z-20">
+    <div className="relative w-full select-none z-20">
       <svg
-        viewBox="0 0 1000 248"
+        viewBox="0 0 1000 252"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         className="w-full h-auto drop-shadow-2xl overflow-visible block"
@@ -193,6 +192,15 @@ const LaptopKeyboard = () => {
             <stop offset="20%" stopColor="#172233" />
             <stop offset="75%" stopColor="#0f172a" />
             <stop offset="100%" stopColor="#090d16" />
+          </linearGradient>
+
+          {/* Realistic Cylindrical Hinge Barrel Gradient */}
+          <linearGradient id="hinge-cylinder" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#07090f" />
+            <stop offset="22%" stopColor="#1e2535" />
+            <stop offset="50%" stopColor="#475569" />
+            <stop offset="78%" stopColor="#1e2535" />
+            <stop offset="100%" stopColor="#07090f" />
           </linearGradient>
 
           {/* Front 3D Bevel Lip Gradient (Facing viewer - highlights thickness) */}
@@ -229,33 +237,107 @@ const LaptopKeyboard = () => {
         </defs>
 
         {/* ======================================================== */}
-        {/* 1. SEAMLESS RECESSED HINGE PIVOT (CONNECTS TO SCREEN) */}
+        {/* 1. AUTHENTIC 100° CYLINDRICAL HINGE MECHANISM & JOINT */}
+        {/* Sits at the meeting point with the screen lid */}
         {/* ======================================================== */}
+        {/* Background Hinge Trough (Recessed channel in chassis) */}
         <rect
-          x="240"
+          x="125"
           y="0"
-          width="520"
-          height="6"
-          rx="2"
-          className="fill-slate-950 stroke-slate-700/80"
+          width="750"
+          height="14"
+          fill="#05070c"
+          className="stroke-black/80"
           strokeWidth="0.8"
         />
+
+        {/* Laser Exhaust Ventilation Slits inside Hinge Trough */}
+        <g stroke="#1a202c" strokeWidth="1.2" opacity="0.7">
+          {Array.from({ length: 60 }).map((_, i) => (
+            <line
+              key={`vent-${i}`}
+              x1={140 + i * 12}
+              y1={1}
+              x2={140 + i * 12}
+              y2={13}
+            />
+          ))}
+        </g>
+
+        {/* Cylindrical Clutch Hinge Barrel */}
+        <rect
+          x="135"
+          y="1"
+          width="730"
+          height="12"
+          rx="5"
+          fill="url(#hinge-cylinder)"
+          stroke="#0b0f19"
+          strokeWidth="1"
+        />
+
+        {/* Cylindrical Specular Highlight Line (Gives authentic 3D curvature) */}
         <line
-          x1="250"
-          y1="1.5"
-          x2="750"
-          y2="1.5"
-          stroke="#38bdf8"
-          strokeOpacity="0.25"
+          x1="145"
+          y1="6"
+          x2="855"
+          y2="6"
+          stroke="#94a3b8"
+          strokeOpacity="0.5"
+          strokeWidth="1"
+        />
+
+        {/* Left Hinge Pivot Bracket / Mounting End Cap */}
+        <rect
+          x="133"
+          y="0.5"
+          width="10"
+          height="13"
+          rx="2"
+          className="fill-slate-800 stroke-slate-600/90"
           strokeWidth="0.8"
+        />
+        {/* Right Hinge Pivot Bracket / Mounting End Cap */}
+        <rect
+          x="857"
+          y="0.5"
+          width="10"
+          height="13"
+          rx="2"
+          className="fill-slate-800 stroke-slate-600/90"
+          strokeWidth="0.8"
+        />
+
+        {/* Left Aluminum Shoulder Corner (Directly touches left screen bezel) */}
+        <path
+          d="M 0,0 L 125,0 L 125,14 L 0,14 Z"
+          className="fill-[url(#deck-light)] dark:fill-[url(#deck-dark)] stroke-slate-700/80"
+          strokeWidth="1"
+        />
+        {/* Right Aluminum Shoulder Corner (Directly touches right screen bezel) */}
+        <path
+          d="M 875,0 L 1000,0 L 1000,14 L 875,14 Z"
+          className="fill-[url(#deck-light)] dark:fill-[url(#deck-dark)] stroke-slate-700/80"
+          strokeWidth="1"
+        />
+
+        {/* Top Meeting Point Shadow (Shadow cast by the 100° tilted screen) */}
+        <line
+          x1="0"
+          y1="1"
+          x2="1000"
+          y2="1"
+          stroke="#000000"
+          strokeOpacity="0.75"
+          strokeWidth="2"
         />
 
         {/* ======================================================== */}
         {/* 2. MAIN 3D KEYBOARD TOP SURFACE (EXACT FULL WIDTH: 0..1000) */}
-        {/* Matches the screen lid width 100% with exact border alignment */}
+        {/* Sits flush below the hinge and shoulders */}
         {/* ======================================================== */}
         <path
-          d="M 0,0 L 1000,0 L 1000,214 Q 1000,224 984,224 L 16,224 Q 0,224 0,214 Z"
+          d="M 0,14 L 1000,14 L 1000,216 Q 1000,226 984,226 L 16,226 Q 0,226 0,216 Z"
           className="fill-[url(#deck-light)] dark:fill-[url(#deck-dark)] stroke-slate-700/80"
           strokeWidth="1.2"
         />
@@ -263,11 +345,11 @@ const LaptopKeyboard = () => {
         {/* Top Chamfer Light Reflection Line */}
         <line
           x1="0"
-          y1="0.5"
+          y1="14.5"
           x2="1000"
-          y2="0.5"
+          y2="14.5"
           stroke="#ffffff"
-          strokeOpacity="0.35"
+          strokeOpacity="0.3"
           strokeWidth="1"
         />
 
@@ -278,7 +360,7 @@ const LaptopKeyboard = () => {
           {/* MagSafe Power Slot */}
           <rect
             x="2"
-            y="65"
+            y="68"
             width="3"
             height="11"
             rx="1.5"
@@ -288,7 +370,7 @@ const LaptopKeyboard = () => {
           {/* Thunderbolt USB-C Port 1 */}
           <rect
             x="2"
-            y="90"
+            y="93"
             width="3"
             height="9"
             rx="1.5"
@@ -298,7 +380,7 @@ const LaptopKeyboard = () => {
           {/* Thunderbolt USB-C Port 2 */}
           <rect
             x="2"
-            y="110"
+            y="113"
             width="3"
             height="9"
             rx="1.5"
@@ -312,7 +394,7 @@ const LaptopKeyboard = () => {
         {/* ======================================================== */}
         <rect
           x="30"
-          y="18"
+          y="22"
           width="74"
           height="112"
           rx="4"
@@ -321,7 +403,7 @@ const LaptopKeyboard = () => {
         />
         <rect
           x="896"
-          y="18"
+          y="22"
           width="74"
           height="112"
           rx="4"
@@ -334,7 +416,7 @@ const LaptopKeyboard = () => {
         {/* ======================================================== */}
         <rect
           x="120"
-          y="14"
+          y="18"
           width="760"
           height="120"
           rx="7"
@@ -345,9 +427,9 @@ const LaptopKeyboard = () => {
         {/* Deep Recessed Shadow at Top of Well */}
         <line
           x1="122"
-          y1="15"
+          y1="19"
           x2="878"
-          y2="15"
+          y2="19"
           stroke="#000000"
           strokeOpacity="0.8"
           strokeWidth="2"
@@ -357,29 +439,29 @@ const LaptopKeyboard = () => {
         {/* 6. CHICLET KEYS WITH 3D DROP SHADOWS & SPECULAR TOPS */}
         {/* ======================================================== */}
         {/* Row 0: Function Keys */}
-        {render3DKeyRow(fnRow, 138, 19, 10)}
+        {render3DKeyRow(fnRow, 138, 23, 10)}
 
         {/* Row 1: Number Keys */}
-        {render3DKeyRow(numRow, 133.5, 34, 14)}
+        {render3DKeyRow(numRow, 133.5, 38, 14)}
 
         {/* Row 2: QWERTY Row */}
-        {render3DKeyRow(qweRow, 133, 53, 14)}
+        {render3DKeyRow(qweRow, 133, 57, 14)}
 
         {/* Row 3: ASDF Row */}
-        {render3DKeyRow(asdRow, 136, 72, 14)}
+        {render3DKeyRow(asdRow, 136, 76, 14)}
 
         {/* Row 4: ZXCV Row */}
-        {render3DKeyRow(zxcRow, 139, 91, 14)}
+        {render3DKeyRow(zxcRow, 139, 95, 14)}
 
         {/* Row 5: Modifiers & Spacebar */}
-        {render3DKeyRow(modRow, 152, 110, 14)}
+        {render3DKeyRow(modRow, 152, 114, 14)}
 
         {/* ======================================================== */}
         {/* 7. FORCE TOUCH GLASS TRACKPAD (CENTERED: 360..640, W = 280) */}
         {/* ======================================================== */}
         <rect
           x="360"
-          y="144"
+          y="148"
           width="280"
           height="68"
           rx="8"
@@ -390,9 +472,9 @@ const LaptopKeyboard = () => {
         {/* Top Rim Specular Shadow */}
         <line
           x1="362"
-          y1="145"
+          y1="149"
           x2="638"
-          y2="145"
+          y2="149"
           stroke="#000000"
           strokeOpacity="0.25"
           strokeWidth="1"
@@ -400,10 +482,9 @@ const LaptopKeyboard = () => {
 
         {/* ======================================================== */}
         {/* 8. 3D FRONT THICKNESS LIP (FACING THE VIEWER: 0..1000) */}
-        {/* Exact full width matching the top deck and screen */}
         {/* ======================================================== */}
         <path
-          d="M 0,214 Q 0,224 16,224 L 984,224 Q 1000,224 1000,214 L 1000,236 Q 1000,246 982,246 L 18,246 Q 0,246 0,236 Z"
+          d="M 0,216 Q 0,226 16,226 L 984,226 Q 1000,226 1000,216 L 1000,238 Q 1000,248 982,248 L 18,248 Q 0,248 0,238 Z"
           className="fill-[url(#front-lip-light)] dark:fill-[url(#front-lip-dark)] stroke-slate-700/80"
           strokeWidth="1"
         />
@@ -411,9 +492,9 @@ const LaptopKeyboard = () => {
         {/* Front Edge Specular Chamfer Highlight Line */}
         <line
           x1="16"
-          y1="224"
+          y1="226"
           x2="984"
-          y2="224"
+          y2="226"
           stroke="#ffffff"
           strokeOpacity="0.5"
           strokeWidth="1.2"
@@ -421,16 +502,16 @@ const LaptopKeyboard = () => {
 
         {/* Centered Ergonomic Thumb Opening Notch */}
         <path
-          d="M 425,224 Q 425,236 440,236 L 560,236 Q 575,236 575,224 Z"
+          d="M 425,226 Q 425,238 440,238 L 560,238 Q 575,238 575,226 Z"
           className="fill-[#080b12] stroke-black/80"
           strokeWidth="1"
         />
         {/* Thumb Notch Top Specular Accent */}
         <line
           x1="440"
-          y1="236"
+          y1="238"
           x2="560"
-          y2="236"
+          y2="238"
           stroke="#ffffff"
           strokeOpacity="0.25"
           strokeWidth="0.8"
@@ -439,9 +520,9 @@ const LaptopKeyboard = () => {
         {/* Bottom Desk Contact Shadow Under Front Lip */}
         <line
           x1="20"
-          y1="246"
+          y1="248"
           x2="980"
-          y2="246"
+          y2="248"
           stroke="#000000"
           strokeOpacity="0.6"
           strokeWidth="2.5"
