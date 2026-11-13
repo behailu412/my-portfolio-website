@@ -197,6 +197,19 @@ const Skills = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [progress, setProgress] = useState(0); // 0 to 100 within current category
   const [hoveredSkill, setHoveredSkill] = useState(null);
+  const [mouseOffset, setMouseOffset] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e) => {
+    if (typeof window !== 'undefined' && window.innerWidth < 768) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+    setMouseOffset({ x, y });
+  };
+
+  const handleMouseLeave = () => {
+    setMouseOffset({ x: 0, y: 0 });
+  };
 
   const activeCategory = CATEGORIES[currentCategoryIndex];
 
@@ -268,22 +281,33 @@ const Skills = () => {
         </div>
 
         {/* ======================================================== */}
-        {/* REALISTIC PROPORTIONED LAPTOP WORKSTATION */}
+        {/* REALISTIC 3D ANGLED LAPTOP WORKSTATION */}
         {/* ======================================================== */}
-        <div className="relative mx-auto max-w-4xl lg:max-w-5xl">
-          
-          {/* Ambient Lighting Behind Screen */}
+        <div 
+          className="relative mx-auto max-w-4xl lg:max-w-5xl [perspective:1800px] py-4"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        >
+          {/* Dynamic Ambient Glow Behind Screen */}
           <div
-            className="absolute -inset-2 sm:-inset-6 rounded-3xl blur-3xl opacity-35 dark:opacity-60 transition-colors duration-1000 -z-10 pointer-events-none"
+            className="absolute -inset-2 sm:-inset-6 rounded-3xl blur-3xl opacity-35 dark:opacity-60 transition-colors duration-1000 -z-20 pointer-events-none"
             style={{
-              background: `radial-gradient(ellipse at center, ${activeCategory.glowColor} 0%, transparent 70%)`
+              background: `radial-gradient(ellipse at 45% 45%, ${activeCategory.glowColor} 0%, transparent 70%)`
             }}
           />
 
-          {/* ------------------------------------------------------ */}
-          {/* 1. LAPTOP SCREEN (LID) - PROPORTIONED REAL DISPLAY */}
-          {/* ------------------------------------------------------ */}
-          <div className="relative rounded-t-xl sm:rounded-t-3xl bg-slate-950 p-1.5 sm:p-3.5 pb-2 border-2 sm:border-[3px] border-slate-700/80 dark:border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+          {/* 3D Tilted Hardware Chassis Wrapper */}
+          <div
+            className="relative transition-transform duration-500 ease-out will-change-transform"
+            style={{
+              transformStyle: 'preserve-3d',
+              transform: `rotateY(${-6.5 + mouseOffset.x * 4}deg) rotateX(${5.5 - mouseOffset.y * 3}deg) rotateZ(0.5deg)`
+            }}
+          >
+            {/* ------------------------------------------------------ */}
+            {/* 1. LAPTOP SCREEN (LID) - PROPORTIONED REAL DISPLAY */}
+            {/* ------------------------------------------------------ */}
+            <div className="relative rounded-t-xl sm:rounded-t-3xl bg-slate-950 p-1.5 sm:p-3.5 pb-2 border-2 sm:border-[3px] border-slate-700/80 dark:border-slate-800 shadow-[0_20px_50px_rgba(0,0,0,0.5),-12px_20px_40px_rgba(0,0,0,0.35)]">
             
             {/* Top Display Bezel: Centered Camera & Traffic Lights */}
             <div className="flex items-center justify-between px-2 sm:px-3 py-1 text-xs mb-1">
@@ -320,6 +344,9 @@ const Skills = () => {
                   background: 'radial-gradient(circle at 50% 20%, rgba(56, 189, 248, 0.35) 0%, transparent 65%)'
                 }}
               />
+
+              {/* Realistic 3D Diagonal Glass Glare */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.08] to-transparent pointer-events-none z-20" />
 
               {/* Screen Top: Category Title & Tabs (Responsive on Mobile & Desktop) */}
               <div className="relative z-10 px-3 sm:px-6 pt-3 sm:pt-4 pb-1">
@@ -553,14 +580,24 @@ const Skills = () => {
           {/* 3. PROPORTIONATE REALISTIC LAPTOP KEYBOARD BASE */}
           {/* ------------------------------------------------------ */}
           <LaptopKeyboard />
+        </div>
 
-          {/* Underglow Shadow onto Desk */}
-          <div 
-            className="w-4/5 mx-auto h-5 sm:h-8 rounded-full blur-2xl opacity-40 dark:opacity-70 transition-all duration-1000 -mt-2 -z-10"
-            style={{
-              background: `radial-gradient(ellipse at center, ${activeCategory.glowColor} 0%, transparent 75%)`
-            }}
-          />
+        {/* Realistic Asymmetric 3D Cast Shadow onto Desk */}
+        <div 
+          className="w-[92%] mx-auto h-7 sm:h-12 rounded-[50%] blur-2xl opacity-60 dark:opacity-85 transition-all duration-700 -mt-2 -z-10 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse at 40% 50%, rgba(0, 0, 0, 0.75) 0%, rgba(15, 23, 42, 0.45) 55%, transparent 80%)',
+            transform: 'rotate(-1deg) scaleX(1.02)'
+          }}
+        />
+
+        {/* Ambient Desk Reflection */}
+        <div 
+          className="w-[85%] mx-auto h-6 sm:h-10 rounded-full blur-3xl opacity-35 dark:opacity-60 transition-all duration-1000 -mt-5 -z-10 pointer-events-none"
+          style={{
+            background: `radial-gradient(ellipse at 45% 50%, ${activeCategory.glowColor} 0%, transparent 75%)`
+          }}
+        />
         </div>
       </div>
     </section>
