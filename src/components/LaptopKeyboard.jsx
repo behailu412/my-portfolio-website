@@ -1,135 +1,148 @@
 import React from 'react';
 
 /**
- * Photorealistic Precision Laptop Base & Keyboard Mockup
- * Mathematically proportioned vector rendering of a modern workstation laptop base.
- * Eliminates perspective warping and vertical stretching for an authentic hardware appearance.
+ * Photorealistic 3D Vector Laptop Base & Keyboard
+ * Engineered with true forward-projecting perspective, 3D front chassis thickness,
+ * layered 3D chiclet keycaps, hardware side profiles, and flush hinge integration.
  */
 const LaptopKeyboard = () => {
-  // Key row specifications (x, width, label)
+  // Key row specifications (width, label, special properties)
   const fnRow = [
     { label: 'esc', w: 46 },
-    { label: 'F1', w: 46 },
-    { label: 'F2', w: 46 },
-    { label: 'F3', w: 46 },
-    { label: 'F4', w: 46 },
-    { label: 'F5', w: 46 },
-    { label: 'F6', w: 46 },
-    { label: 'F7', w: 46 },
-    { label: 'F8', w: 46 },
-    { label: 'F9', w: 46 },
-    { label: 'F10', w: 46 },
-    { label: 'F11', w: 46 },
-    { label: 'F12', w: 46 },
+    { label: 'F1', w: 45 },
+    { label: 'F2', w: 45 },
+    { label: 'F3', w: 45 },
+    { label: 'F4', w: 45 },
+    { label: 'F5', w: 45 },
+    { label: 'F6', w: 45 },
+    { label: 'F7', w: 45 },
+    { label: 'F8', w: 45 },
+    { label: 'F9', w: 45 },
+    { label: 'F10', w: 45 },
+    { label: 'F11', w: 45 },
+    { label: 'F12', w: 45 },
     { label: '⌽', w: 46, isPower: true },
   ];
 
   const numRow = [
-    { label: '`', w: 45 },
-    { label: '1', w: 45 },
-    { label: '2', w: 45 },
-    { label: '3', w: 45 },
-    { label: '4', w: 45 },
-    { label: '5', w: 45 },
-    { label: '6', w: 45 },
-    { label: '7', w: 45 },
-    { label: '8', w: 45 },
-    { label: '9', w: 45 },
-    { label: '0', w: 45 },
-    { label: '-', w: 45 },
-    { label: '=', w: 45 },
-    { label: 'delete', w: 69 },
+    { label: '`', w: 44 },
+    { label: '1', w: 44 },
+    { label: '2', w: 44 },
+    { label: '3', w: 44 },
+    { label: '4', w: 44 },
+    { label: '5', w: 44 },
+    { label: '6', w: 44 },
+    { label: '7', w: 44 },
+    { label: '8', w: 44 },
+    { label: '9', w: 44 },
+    { label: '0', w: 44 },
+    { label: '-', w: 44 },
+    { label: '=', w: 44 },
+    { label: 'delete', w: 68 },
   ];
 
   const qweRow = [
-    { label: 'tab', w: 66 },
-    { label: 'Q', w: 45 },
-    { label: 'W', w: 45 },
-    { label: 'E', w: 45 },
-    { label: 'R', w: 45 },
-    { label: 'T', w: 45 },
-    { label: 'Y', w: 45 },
-    { label: 'U', w: 45 },
-    { label: 'I', w: 45 },
-    { label: 'O', w: 45 },
-    { label: 'P', w: 45 },
-    { label: '[', w: 45 },
-    { label: ']', w: 45 },
+    { label: 'tab', w: 64 },
+    { label: 'Q', w: 44 },
+    { label: 'W', w: 44 },
+    { label: 'E', w: 44 },
+    { label: 'R', w: 44 },
+    { label: 'T', w: 44 },
+    { label: 'Y', w: 44 },
+    { label: 'U', w: 44 },
+    { label: 'I', w: 44 },
+    { label: 'O', w: 44 },
+    { label: 'P', w: 44 },
+    { label: '[', w: 44 },
+    { label: ']', w: 44 },
     { label: '\\', w: 48 },
   ];
 
   const asdRow = [
-    { label: 'caps', w: 76 },
-    { label: 'A', w: 45 },
-    { label: 'S', w: 45 },
-    { label: 'D', w: 45 },
-    { label: 'F', w: 45 },
-    { label: 'G', w: 45 },
-    { label: 'H', w: 45 },
-    { label: 'J', w: 45 },
-    { label: 'K', w: 45 },
-    { label: 'L', w: 45 },
-    { label: ';', w: 45 },
-    { label: "'", w: 45 },
-    { label: 'return', w: 83 },
+    { label: 'caps', w: 74 },
+    { label: 'A', w: 44 },
+    { label: 'S', w: 44 },
+    { label: 'D', w: 44 },
+    { label: 'F', w: 44 },
+    { label: 'G', w: 44 },
+    { label: 'H', w: 44 },
+    { label: 'J', w: 44 },
+    { label: 'K', w: 44 },
+    { label: 'L', w: 44 },
+    { label: ';', w: 44 },
+    { label: "'", w: 44 },
+    { label: 'return', w: 82 },
   ];
 
   const zxcRow = [
-    { label: 'shift', w: 96 },
-    { label: 'Z', w: 45 },
-    { label: 'X', w: 45 },
-    { label: 'C', w: 45 },
-    { label: 'V', w: 45 },
-    { label: 'B', w: 45 },
-    { label: 'N', w: 45 },
-    { label: 'M', w: 45 },
-    { label: ',', w: 45 },
-    { label: '.', w: 45 },
-    { label: '/', w: 45 },
-    { label: 'shift', w: 109 },
+    { label: 'shift', w: 94 },
+    { label: 'Z', w: 44 },
+    { label: 'X', w: 44 },
+    { label: 'C', w: 44 },
+    { label: 'V', w: 44 },
+    { label: 'B', w: 44 },
+    { label: 'N', w: 44 },
+    { label: 'M', w: 44 },
+    { label: ',', w: 44 },
+    { label: '.', w: 44 },
+    { label: '/', w: 44 },
+    { label: 'shift', w: 108 },
   ];
 
   const modRow = [
-    { label: 'fn', w: 44 },
-    { label: 'control', w: 48 },
-    { label: 'option', w: 48 },
-    { label: 'command ⌘', w: 60 },
-    { label: '', w: 242, isSpace: true },
-    { label: 'command ⌘', w: 60 },
-    { label: 'option', w: 48 },
+    { label: 'fn', w: 42 },
+    { label: 'control', w: 46 },
+    { label: 'option', w: 46 },
+    { label: 'command ⌘', w: 58 },
+    { label: '', w: 246, isSpace: true },
+    { label: 'command ⌘', w: 58 },
+    { label: 'option', w: 46 },
     { label: '◀', w: 32 },
     { label: '▲▼', w: 32 },
     { label: '▶', w: 32 },
   ];
 
-  const renderKeyRow = (keys, startX, y, h) => {
+  const render3DKeyRow = (keys, startX, y, h) => {
     let currentX = startX;
     return keys.map((key, idx) => {
       const x = currentX;
-      currentX += key.w + 4; // 4px gap
+      currentX += key.w + 4; // 4px spacing
 
       return (
         <g key={`key-${y}-${idx}`}>
-          {/* Keycap base with subtle shadow */}
+          {/* Key Base Drop Shadow (Creates 3D elevation from the well) */}
+          <rect
+            x={x}
+            y={y + 1.2}
+            width={key.w}
+            height={h}
+            rx="2.5"
+            fill="#06080d"
+            opacity="0.9"
+          />
+
+          {/* Raised Keycap Face */}
           <rect
             x={x}
             y={y}
             width={key.w}
             height={h}
             rx="2.5"
-            className="fill-slate-900 dark:fill-[#151922] stroke-slate-700/60 dark:stroke-[#252c3c]"
+            className="fill-slate-900 dark:fill-[#151922] stroke-slate-700/60 dark:stroke-[#262e3e]"
             strokeWidth="0.8"
           />
-          {/* Top specular highlight on keycap */}
+
+          {/* Top Specular Edge Highlight */}
           <line
-            x1={x + 1}
-            y1={y + 1}
-            x2={x + key.w - 1}
-            y2={y + 1}
+            x1={x + 1.5}
+            y1={y + 0.8}
+            x2={x + key.w - 1.5}
+            y2={y + 0.8}
             stroke="#ffffff"
-            strokeOpacity="0.08"
+            strokeOpacity="0.14"
             strokeWidth="0.8"
           />
+
           {/* Keycap Legend Text */}
           {key.isPower ? (
             <circle
@@ -145,7 +158,7 @@ const LaptopKeyboard = () => {
               x={x + key.w / 2}
               y={y + h / 2 + 2.8}
               textAnchor="middle"
-              className="fill-slate-400 dark:fill-slate-300 font-mono text-[8px] select-none pointer-events-none"
+              className="fill-slate-300 dark:fill-slate-200 font-mono select-none pointer-events-none font-medium"
               style={{ fontSize: key.label.length > 5 ? '6.5px' : '7.5px' }}
             >
               {key.label}
@@ -157,170 +170,278 @@ const LaptopKeyboard = () => {
   };
 
   return (
-    <div className="relative w-full select-none -mt-0.5">
+    <div className="relative w-full select-none -mt-1 sm:-mt-1.5 z-20">
       <svg
-        viewBox="0 0 1000 220"
+        viewBox="0 0 1000 270"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-auto drop-shadow-2xl"
+        className="w-full h-auto drop-shadow-2xl overflow-visible"
       >
         <defs>
-          {/* Light Mode Aluminum Body Gradient */}
-          <linearGradient id="chassis-light" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#dbe2ea" />
-            <stop offset="5%" stopColor="#cbd5e1" />
-            <stop offset="60%" stopColor="#94a3b8" />
+          {/* Top Surface Light Mode Aluminum Gradient */}
+          <linearGradient id="deck-light" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#e2e8f0" />
+            <stop offset="25%" stopColor="#cbd5e1" />
+            <stop offset="75%" stopColor="#94a3b8" />
             <stop offset="100%" stopColor="#64748b" />
           </linearGradient>
 
-          {/* Dark Mode Aluminum Body Gradient */}
-          <linearGradient id="chassis-dark" x1="0%" y1="0%" x2="0%" y2="100%">
+          {/* Top Surface Dark Mode Aluminum Gradient */}
+          <linearGradient id="deck-dark" x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="#1e293b" />
-            <stop offset="5%" stopColor="#182234" />
-            <stop offset="60%" stopColor="#0f172a" />
-            <stop offset="100%" stopColor="#080d16" />
+            <stop offset="20%" stopColor="#172233" />
+            <stop offset="75%" stopColor="#0f172a" />
+            <stop offset="100%" stopColor="#090d16" />
+          </linearGradient>
+
+          {/* Front 3D Bevel Lip Gradient (Facing viewer - highlights thickness) */}
+          <linearGradient id="front-lip-light" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#f8fafc" />
+            <stop offset="15%" stopColor="#94a3b8" />
+            <stop offset="85%" stopColor="#64748b" />
+            <stop offset="100%" stopColor="#334155" />
+          </linearGradient>
+
+          <linearGradient id="front-lip-dark" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#384761" />
+            <stop offset="20%" stopColor="#1e293b" />
+            <stop offset="85%" stopColor="#0f172a" />
+            <stop offset="100%" stopColor="#05070c" />
+          </linearGradient>
+
+          {/* Left Side Profile Gradient */}
+          <linearGradient id="side-profile-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#05070c" />
+            <stop offset="100%" stopColor="#1e293b" />
           </linearGradient>
 
           {/* Inset Keyboard Well Gradient */}
-          <linearGradient id="well-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#0a0d14" />
-            <stop offset="100%" stopColor="#101520" />
+          <linearGradient id="keyboard-well-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#06080d" />
+            <stop offset="100%" stopColor="#0f1420" />
           </linearGradient>
 
           {/* Glass Trackpad Gradient */}
-          <linearGradient id="trackpad-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#ffffff" stopOpacity="0.07" />
-            <stop offset="100%" stopColor="#000000" stopOpacity="0.05" />
+          <linearGradient id="glass-trackpad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#ffffff" stopOpacity="0.1" />
+            <stop offset="100%" stopColor="#000000" stopOpacity="0.08" />
           </linearGradient>
 
-          {/* Laser-drilled Acoustic Speaker Dot Pattern */}
-          <pattern id="speaker-holes" width="4" height="4" patternUnits="userSpaceOnUse">
-            <circle cx="2" cy="2" r="0.75" className="fill-slate-600/50 dark:fill-black/60" />
+          {/* Acoustic Speaker Holes Pattern */}
+          <pattern id="speaker-mesh" width="4" height="4" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="2" r="0.8" className="fill-slate-600/50 dark:fill-black/70" />
           </pattern>
         </defs>
 
         {/* ======================================================== */}
-        {/* 1. MAIN ALUMINUM LAPTOP BASE CHASSIS */}
+        {/* 1. SEAMLESS RECESSED HINGE PIVOT (CONNECTS TO SCREEN) */}
         {/* ======================================================== */}
-        {/* Natural tapered perspective (wider at back, slightly tapered at front) */}
+        <rect
+          x="280"
+          y="0"
+          width="440"
+          height="7"
+          rx="2"
+          className="fill-slate-950 stroke-slate-700/80"
+          strokeWidth="0.8"
+        />
+        <line
+          x1="290"
+          y1="1.5"
+          x2="710"
+          y2="1.5"
+          stroke="#38bdf8"
+          strokeOpacity="0.25"
+          strokeWidth="0.8"
+        />
+
+        {/* ======================================================== */}
+        {/* 2. MAIN 3D KEYBOARD TOP SURFACE (FORWARD PERSPECTIVE) */}
+        {/* Rear is 860px (x: 70..930), Front is 970px (x: 15..985) */}
+        {/* ======================================================== */}
         <path
-          d="M 6,0 L 994,0 Q 1000,0 998,14 L 980,204 Q 975,220 955,220 L 45,220 Q 25,220 20,204 L 2,14 Q 0,0 6,0 Z"
-          className="fill-[url(#chassis-light)] dark:fill-[url(#chassis-dark)] stroke-slate-300 dark:stroke-slate-700/80"
+          d="M 68,0 L 932,0 Q 940,0 938,8 L 986,220 Q 983,230 970,230 L 30,230 Q 17,230 14,220 L 62,8 Q 60,0 68,0 Z"
+          className="fill-[url(#deck-light)] dark:fill-[url(#deck-dark)] stroke-slate-300 dark:stroke-slate-700/80"
           strokeWidth="1.2"
         />
 
-        {/* Top Chamfer Specular Highlight Line */}
+        {/* Top Chamfer Light Reflection Line */}
         <line
-          x1="8"
+          x1="70"
           y1="1"
-          x2="992"
+          x2="930"
           y2="1"
           stroke="#ffffff"
-          strokeOpacity="0.4"
+          strokeOpacity="0.45"
           strokeWidth="1"
         />
 
         {/* ======================================================== */}
-        {/* 2. ACOUSTIC SPEAKER GRILLES (LEFT & RIGHT) */}
+        {/* 3. HARDWARE SIDE PORTS (LEFT CHASSIS PROFILE) */}
+        {/* Shows physical 3D thickness with USB-C and MagSafe slots */}
         {/* ======================================================== */}
-        <rect
-          x="44"
-          y="18"
-          width="64"
-          height="106"
-          rx="3"
-          fill="url(#speaker-holes)"
+        <g opacity="0.65">
+          {/* MagSafe Power Slot */}
+          <rect
+            x="24"
+            y="70"
+            width="3"
+            height="11"
+            rx="1.5"
+            transform="rotate(13 24 70)"
+            className="fill-slate-950 stroke-slate-600/80"
+            strokeWidth="0.5"
+          />
+          {/* Thunderbolt USB-C Port 1 */}
+          <rect
+            x="21"
+            y="94"
+            width="3"
+            height="9"
+            rx="1.5"
+            transform="rotate(13 21 94)"
+            className="fill-slate-950 stroke-slate-600/80"
+            strokeWidth="0.5"
+          />
+          {/* Thunderbolt USB-C Port 2 */}
+          <rect
+            x="18"
+            y="114"
+            width="3"
+            height="9"
+            rx="1.5"
+            transform="rotate(13 18 114)"
+            className="fill-slate-950 stroke-slate-600/80"
+            strokeWidth="0.5"
+          />
+        </g>
+
+        {/* ======================================================== */}
+        {/* 4. ACOUSTIC SPEAKER GRILLES (LEFT & RIGHT OF KEYBOARD) */}
+        {/* ======================================================== */}
+        <polygon
+          points="46,20 118,20 120,126 38,126"
+          fill="url(#speaker-mesh)"
           opacity="0.85"
         />
-        <rect
-          x="892"
-          y="18"
-          width="64"
-          height="106"
-          rx="3"
-          fill="url(#speaker-holes)"
+        <polygon
+          points="882,20 954,20 962,126 880,126"
+          fill="url(#speaker-mesh)"
           opacity="0.85"
         />
 
         {/* ======================================================== */}
-        {/* 3. INSET KEYBOARD WELL */}
+        {/* 5. INSET KEYBOARD WELL (SLIGHTLY ANGLE-EXPANDED) */}
         {/* ======================================================== */}
-        <rect
-          x="128"
-          y="14"
-          width="744"
-          height="114"
-          rx="7"
-          fill="url(#well-grad)"
-          className="stroke-black/50"
-          strokeWidth="1"
+        <polygon
+          points="140,15 860,15 868,128 132,128"
+          fill="url(#keyboard-well-grad)"
+          className="stroke-black/60"
+          strokeWidth="1.2"
         />
-        {/* Inner Shadow Simulation */}
+        {/* Deep Recessed Shadow at Top of Well */}
         <line
-          x1="130"
-          y1="15"
-          x2="870"
-          y2="15"
+          x1="140"
+          y1="16"
+          x2="860"
+          y2="16"
           stroke="#000000"
-          strokeOpacity="0.7"
-          strokeWidth="1.5"
+          strokeOpacity="0.8"
+          strokeWidth="2"
         />
 
         {/* ======================================================== */}
-        {/* 4. CHICLET KEYS (6 ROWS - AUTHENTIC MACBOOK PRO LAYOUT) */}
+        {/* 6. CHICLET KEYS WITH 3D DROP SHADOWS & SPECULAR TOPS */}
         {/* ======================================================== */}
         {/* Row 0: Function Keys */}
-        {renderKeyRow(fnRow, 136, 19, 10)}
+        {render3DKeyRow(fnRow, 142, 20, 10)}
 
         {/* Row 1: Number Keys */}
-        {renderKeyRow(numRow, 136, 33, 14)}
+        {render3DKeyRow(numRow, 141, 35, 14)}
 
         {/* Row 2: QWERTY Row */}
-        {renderKeyRow(qweRow, 136, 51, 14)}
+        {render3DKeyRow(qweRow, 140, 54, 14)}
 
         {/* Row 3: ASDF Row */}
-        {renderKeyRow(asdRow, 136, 69, 14)}
+        {render3DKeyRow(asdRow, 139, 73, 14)}
 
         {/* Row 4: ZXCV Row */}
-        {renderKeyRow(zxcRow, 136, 87, 14)}
+        {render3DKeyRow(zxcRow, 138, 92, 14)}
 
         {/* Row 5: Modifiers & Spacebar */}
-        {renderKeyRow(modRow, 136, 105, 14)}
+        {render3DKeyRow(modRow, 137, 111, 14)}
 
         {/* ======================================================== */}
-        {/* 5. EXPANSIVE FORCE TOUCH GLASS TRACKPAD */}
+        {/* 7. FORCE TOUCH GLASS TRACKPAD (PROPORTIONAL 3D) */}
         {/* ======================================================== */}
         <rect
-          x="370"
-          y="136"
-          width="260"
-          height="68"
+          x="365"
+          y="146"
+          width="270"
+          height="72"
           rx="8"
-          fill="url(#trackpad-grad)"
-          className="stroke-slate-400/35 dark:stroke-slate-600/40"
+          fill="url(#glass-trackpad)"
+          className="stroke-slate-400/40 dark:stroke-slate-600/50"
           strokeWidth="1"
         />
-        {/* Trackpad subtle top shadow */}
+        {/* Top Rim Specular Shadow */}
         <line
-          x1="372"
-          y1="137"
-          x2="628"
-          y2="137"
+          x1="367"
+          y1="147"
+          x2="633"
+          y2="147"
           stroke="#000000"
-          strokeOpacity="0.2"
+          strokeOpacity="0.25"
           strokeWidth="1"
         />
 
         {/* ======================================================== */}
-        {/* 6. FRONT ERGONOMIC THUMB SCOOP / OPENING NOTCH */}
+        {/* 8. 3D FRONT THICKNESS LIP (FACING THE VIEWER) */}
+        {/* This 24px vertical face gives the laptop tangible physical depth! */}
         {/* ======================================================== */}
-        <rect
-          x="440"
-          y="213"
-          width="120"
-          height="6"
-          rx="3"
-          className="fill-slate-500/50 dark:fill-black"
+        <path
+          d="M 14,220 Q 17,230 30,230 L 970,230 Q 983,230 986,220 L 991,244 Q 989,258 974,258 L 26,258 Q 11,258 9,244 Z"
+          className="fill-[url(#front-lip-light)] dark:fill-[url(#front-lip-dark)] stroke-slate-400 dark:stroke-slate-700/60"
+          strokeWidth="1"
+        />
+
+        {/* Front Edge Specular Chamfer Highlight Line */}
+        <line
+          x1="28"
+          y1="230.5"
+          x2="972"
+          y2="230.5"
+          stroke="#ffffff"
+          strokeOpacity="0.5"
+          strokeWidth="1.2"
+        />
+
+        {/* Centered Ergonomic Thumb Opening Notch */}
+        <path
+          d="M 432,230.5 Q 432,243 446,243 L 554,243 Q 568,243 568,230.5 Z"
+          className="fill-[#080b12] stroke-black/80"
+          strokeWidth="1"
+        />
+        {/* Thumb Notch Top Specular Accent */}
+        <line
+          x1="446"
+          y1="243"
+          x2="554"
+          y2="243"
+          stroke="#ffffff"
+          strokeOpacity="0.25"
+          strokeWidth="0.8"
+        />
+
+        {/* Bottom Desk Contact Shadow Under Front Lip */}
+        <line
+          x1="35"
+          y1="258"
+          x2="965"
+          y2="258"
+          stroke="#000000"
+          strokeOpacity="0.6"
+          strokeWidth="2.5"
         />
       </svg>
     </div>
@@ -328,4 +449,3 @@ const LaptopKeyboard = () => {
 };
 
 export default LaptopKeyboard;
-

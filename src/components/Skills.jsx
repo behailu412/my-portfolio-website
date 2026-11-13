@@ -570,14 +570,8 @@ const Skills = () => {
           </div>
 
           {/* ------------------------------------------------------ */}
-          {/* 2. REALISTIC CYLINDRICAL HINGE MECHANISM */}
-          {/* ------------------------------------------------------ */}
-          <div className="relative mx-auto w-40 sm:w-64 h-2.5 sm:h-3.5 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-sm border-t border-slate-700/80 shadow-md z-20 flex items-center justify-center">
-            <div className="w-14 sm:w-24 h-0.5 bg-slate-950 rounded-full" />
-          </div>
-
-          {/* ------------------------------------------------------ */}
-          {/* 3. PROPORTIONATE REALISTIC LAPTOP KEYBOARD BASE */}
+          {/* 2. PROPORTIONATE REALISTIC 3D LAPTOP KEYBOARD BASE */}
+          {/* Seamless flush hinge mounting directly under the screen */}
           {/* ------------------------------------------------------ */}
           <LaptopKeyboard />
         </div>
