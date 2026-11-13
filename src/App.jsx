@@ -11,6 +11,7 @@ import ScrollProgressBar from './components/ScrollProgressBar';
 import BackToTop from './components/BackToTop';
 import DeveloperTerminal from './components/DeveloperTerminal';
 import Toast from './components/Toast';
+import Logo from './components/Logo';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -60,7 +61,7 @@ function App() {
       {/* Main Sections */}
       <main className="relative z-10">
         <section id="home">
-          <About onCopySuccess={showToast} />
+          <About />
         </section>
 
         <section id="skills">
@@ -96,11 +97,9 @@ function App() {
       {/* Footer */}
       <footer className="relative z-10 bg-white/70 dark:bg-gray-900/60 backdrop-blur-md border-t border-slate-200/90 dark:border-gray-800 py-10 mt-20">
         <div className="container mx-auto px-6 text-center space-y-3">
-          <div className="flex items-center justify-center space-x-2">
-            <div className="w-7 h-7 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center shadow-md">
-              <span className="text-white font-bold text-xs">BY</span>
-            </div>
-            <span className="font-bold text-slate-900 dark:text-white tracking-tight">
+          <div className="flex items-center justify-center space-x-2.5">
+            <Logo size="sm" />
+            <span className="font-extrabold text-slate-900 dark:text-white tracking-tight">
               Behailu Yifru
             </span>
           </div>

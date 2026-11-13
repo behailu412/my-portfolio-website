@@ -13,6 +13,7 @@ import {
 } from 'react-icons/fa';
 import { navLinks } from '../data/data';
 import { useTheme } from '../context/ThemeContext.jsx';
+import Logo from './Logo';
 
 const NAV_ICONS = {
   home: FaHome,
@@ -148,16 +149,17 @@ const Navbar = ({ activeSection }) => {
                 e.preventDefault();
                 handleNavClick('#home');
               }}
-              className="flex items-center space-x-2.5 group cursor-pointer"
+              className="flex items-center space-x-3 group cursor-pointer select-none"
             >
-              <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center shadow-md shadow-cyan-500/25 group-hover:scale-105 transition-transform duration-200">
-                <span className="text-white font-bold text-lg tracking-tight">BY</span>
-              </div>
+              <Logo size="md" />
               <div className="flex flex-col">
-                <span className="text-slate-900 dark:text-white font-bold text-base sm:text-lg tracking-tight group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors">
-                  Behailu Yifru
-                </span>
-                <span className="text-[11px] text-slate-500 dark:text-gray-400 font-medium hidden sm:block -mt-1">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-slate-900 dark:text-white font-extrabold text-base sm:text-lg tracking-tight group-hover:text-cyan-500 transition-colors">
+                    Behailu Yifru
+                  </span>
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shadow-sm shadow-cyan-400" />
+                </div>
+                <span className="text-[11px] text-slate-500 dark:text-gray-400 font-semibold uppercase tracking-wider hidden sm:block -mt-0.5">
                   Full-Stack Developer
                 </span>
               </div>

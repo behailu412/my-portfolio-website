@@ -9,22 +9,10 @@ import {
   FaMapMarkerAlt, 
   FaGraduationCap, 
   FaPaperPlane, 
-  FaFileAlt, 
-  FaCopy, 
-  FaCheck
+  FaFileAlt
 } from 'react-icons/fa';
 
-const About = ({ onCopySuccess }) => {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopyEmail = () => {
-    navigator.clipboard.writeText(contactInfo.email);
-    setCopied(true);
-    if (onCopySuccess) {
-      onCopySuccess(`Email copied: ${contactInfo.email}`);
-    }
-    setTimeout(() => setCopied(false), 2500);
-  };
+const About = () => {
 
   return (
     <section className="min-h-screen flex flex-col justify-center pt-24 pb-12 px-4 sm:px-6 relative">
@@ -150,31 +138,16 @@ const About = ({ onCopySuccess }) => {
                 <span>Telegram</span>
               </a>
 
-              <button
-                type="button"
-                onClick={handleCopyEmail}
-                className="btn-secondary inline-flex items-center justify-center space-x-2 text-sm sm:text-base"
-                title="Copy email to clipboard"
-              >
-                {copied ? <FaCheck className="text-emerald-500" /> : <FaCopy className="text-cyan-500" />}
-                <span>{copied ? 'Copied Email!' : 'Copy Email'}</span>
-              </button>
-            </div>
-
-            {/* Resume Callout */}
-            <div className="pt-2 flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+              {/* View Resume Button (replaces Copy Email) */}
               <a
-                href={`${contactInfo.resume}#view=FitH&toolbar=0&navpanes=0&scrollbar=0`}
+                href={contactInfo.resume}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-semibold rounded-xl shadow-lg shadow-purple-500/25 transition-all duration-300 transform hover:scale-105 w-full sm:w-auto text-sm sm:text-base"
+                className="inline-flex items-center justify-center space-x-2 px-5 py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 hover:from-cyan-500 hover:via-blue-500 hover:to-indigo-500 transition-all duration-300 shadow-md shadow-blue-500/20 hover:shadow-cyan-500/35 transform hover:scale-[1.02] text-sm sm:text-base"
               >
-                <FaFileAlt />
-                <span>View Full Resume</span>
+                <FaFileAlt className="text-cyan-200" />
+                <span>View Resume</span>
               </a>
-              <span className="text-xs text-slate-500 dark:text-gray-400">
-                PDF hosted on Google Drive
-              </span>
             </div>
           </div>
         </div>
