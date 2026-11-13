@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import LaptopKeyboard from './LaptopKeyboard';
 import { 
   FaJava, 
   FaPlay, 
@@ -531,129 +532,14 @@ const Skills = () => {
           {/* ------------------------------------------------------ */}
           {/* 2. REALISTIC CYLINDRICAL HINGE MECHANISM */}
           {/* ------------------------------------------------------ */}
-          <div className="relative mx-auto w-48 sm:w-72 h-3 sm:h-4 bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 rounded-sm border-t border-slate-600/80 shadow-md z-20 flex items-center justify-center">
-            <div className="w-20 sm:w-28 h-0.5 bg-slate-900 rounded-full" />
+          <div className="relative mx-auto w-44 sm:w-64 h-2.5 sm:h-3.5 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-sm border-t border-slate-700/80 shadow-md z-20 flex items-center justify-center">
+            <div className="w-16 sm:w-24 h-0.5 bg-slate-950 rounded-full" />
           </div>
 
           {/* ------------------------------------------------------ */}
-          {/* 3. PROPERLY EXPANDED REALISTIC KEYBOARD DECK (NOT SQUISHED) */}
+          {/* 3. PROPORTIONATE REALISTIC LAPTOP KEYBOARD BASE */}
           {/* ------------------------------------------------------ */}
-          <div 
-            className="relative rounded-b-2xl sm:rounded-b-3xl bg-gradient-to-b from-slate-200 via-slate-300 to-slate-400 dark:from-slate-800 dark:via-slate-850 dark:to-slate-900 border-t border-slate-300 dark:border-slate-700 shadow-2xl p-3 sm:p-5 pt-2 pb-5 sm:pb-8 w-full sm:w-[103%] sm:-mx-[1.5%] [transform:perspective(1000px)_rotateX(20deg)] origin-top transition-all duration-300"
-          >
-            {/* Top Deck: Speaker Grilles and Inset Keyboard Base */}
-            <div className="flex items-start justify-between gap-2 sm:gap-4 max-w-4xl mx-auto">
-              
-              {/* Left Speaker Grille */}
-              <div className="hidden sm:flex flex-col space-y-1 w-6 sm:w-10 pt-2 opacity-35 dark:opacity-40">
-                {Array.from({ length: 14 }).map((_, i) => (
-                  <div key={`spk-l-${i}`} className="flex space-x-1 justify-center">
-                    <span className="w-1 h-1 rounded-full bg-slate-900 dark:bg-black" />
-                    <span className="w-1 h-1 rounded-full bg-slate-900 dark:bg-black" />
-                  </div>
-                ))}
-              </div>
-
-              {/* Centered Keyboard Well (Clearly Visible Individual Keys) */}
-              <div className="flex-1 bg-slate-950 rounded-xl p-2 sm:p-3 shadow-inner border border-slate-700/60 dark:border-slate-800 space-y-1 sm:space-y-1.5">
-                
-                {/* Row 1: Function Row */}
-                <div className="grid grid-cols-14 gap-0.5 sm:gap-1 text-[7px] sm:text-[9px] font-mono text-slate-400">
-                  {['esc', 'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11', 'F12', '⌽'].map((k, i) => (
-                    <div
-                      key={`fn-${i}`}
-                      className="h-3.5 sm:h-5 rounded bg-slate-900 border border-slate-800 flex items-center justify-center shadow-sm text-slate-300"
-                    >
-                      {k}
-                    </div>
-                  ))}
-                </div>
-
-                {/* Row 2: Number Row */}
-                <div className="grid grid-cols-14 gap-0.5 sm:gap-1 text-[8px] sm:text-[10px] font-mono text-slate-300">
-                  {['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'delete'].map((k, i) => (
-                    <div
-                      key={`num-${i}`}
-                      className={`h-4 sm:h-6 rounded bg-slate-900 border border-slate-800 flex items-center justify-center shadow-sm ${
-                        k === 'delete' ? 'col-span-1 text-[7px] sm:text-[8px]' : ''
-                      }`}
-                    >
-                      {k}
-                    </div>
-                  ))}
-                </div>
-
-                {/* Row 3: QWERTY Row */}
-                <div className="grid grid-cols-14 gap-0.5 sm:gap-1 text-[8px] sm:text-[10px] font-mono text-slate-200">
-                  {['tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']', '\\'].map((k, i) => (
-                    <div
-                      key={`qwe-${i}`}
-                      className="h-4 sm:h-6 rounded bg-slate-900 border border-slate-800 flex items-center justify-center shadow-sm"
-                    >
-                      {k}
-                    </div>
-                  ))}
-                </div>
-
-                {/* Row 4: ASDF Row */}
-                <div className="grid grid-cols-13 gap-0.5 sm:gap-1 text-[8px] sm:text-[10px] font-mono text-slate-200">
-                  {['caps', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', "'", 'return'].map((k, i) => (
-                    <div
-                      key={`asdf-${i}`}
-                      className="h-4 sm:h-6 rounded bg-slate-900 border border-slate-800 flex items-center justify-center shadow-sm"
-                    >
-                      {k}
-                    </div>
-                  ))}
-                </div>
-
-                {/* Row 5: ZXCV Row */}
-                <div className="grid grid-cols-12 gap-0.5 sm:gap-1 text-[8px] sm:text-[10px] font-mono text-slate-200">
-                  {['shift', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', '<', '>', '?', 'shift'].map((k, i) => (
-                    <div
-                      key={`zxc-${i}`}
-                      className="h-4 sm:h-6 rounded bg-slate-900 border border-slate-800 flex items-center justify-center shadow-sm"
-                    >
-                      {k}
-                    </div>
-                  ))}
-                </div>
-
-                {/* Row 6: Modifier & Spacebar Row */}
-                <div className="grid grid-cols-8 gap-0.5 sm:gap-1 text-[7px] sm:text-[9px] font-mono text-slate-300">
-                  <div className="h-4 sm:h-6 rounded bg-slate-900 border border-slate-800 flex items-center justify-center">fn</div>
-                  <div className="h-4 sm:h-6 rounded bg-slate-900 border border-slate-800 flex items-center justify-center">control</div>
-                  <div className="h-4 sm:h-6 rounded bg-slate-900 border border-slate-800 flex items-center justify-center">option</div>
-                  <div className="h-4 sm:h-6 rounded bg-slate-900 border border-slate-800 flex items-center justify-center">cmd ⌘</div>
-                  <div className="col-span-2 h-4 sm:h-6 rounded bg-slate-900 border border-slate-800 flex items-center justify-center shadow-sm text-slate-400">
-                    space
-                  </div>
-                  <div className="h-4 sm:h-6 rounded bg-slate-900 border border-slate-800 flex items-center justify-center">cmd ⌘</div>
-                  <div className="h-4 sm:h-6 rounded bg-slate-900 border border-slate-800 flex items-center justify-center">◀ ▼ ▶</div>
-                </div>
-              </div>
-
-              {/* Right Speaker Grille */}
-              <div className="hidden sm:flex flex-col space-y-1 w-6 sm:w-10 pt-2 opacity-35 dark:opacity-40">
-                {Array.from({ length: 14 }).map((_, i) => (
-                  <div key={`spk-r-${i}`} className="flex space-x-1 justify-center">
-                    <span className="w-1 h-1 rounded-full bg-slate-900 dark:bg-black" />
-                    <span className="w-1 h-1 rounded-full bg-slate-900 dark:bg-black" />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Expansive Glass Trackpad Centered on Palm Rest */}
-            <div className="w-36 sm:w-56 md:w-64 h-12 sm:h-16 md:h-20 mx-auto mt-2.5 sm:mt-4 rounded-xl bg-slate-200/50 dark:bg-slate-900/60 border border-slate-400/40 dark:border-slate-700/60 shadow-inner flex items-center justify-center">
-              <span className="text-[9px] font-mono text-slate-400/60 select-none">
-                Force Touch Trackpad
-              </span>
-            </div>
-
-            {/* Front Lip / Ergonomic Thumb Notch */}
-            <div className="w-24 sm:w-36 h-1.5 sm:h-2 bg-slate-400 dark:bg-slate-950 mx-auto rounded-b-md mt-2 shadow-inner" />
-          </div>
+          <LaptopKeyboard />
 
           {/* Underglow Shadow onto Desk */}
           <div 
